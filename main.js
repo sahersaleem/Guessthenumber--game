@@ -11,22 +11,21 @@ async function start() {
     await sleep();
     gameTITLE.stop;
 }
-/*async function loop (){
+async function loop() {
     const playNum = await inquirer.prompt([
         {
-            type:"number",
-            name:"loop",
-            message:"How many times you want to play:"
+            type: "number",
+            name: "loop",
+            message: "How many times you want to play:"
         }
-    ])
-for (let i = 0 ; i < playNum.loop.length ;i++){
-    console.log(guessNumber(),i)
+    ]);
+    for (let i = 0; i < playNum.loop; i++) {
+        console.log(guessNumber(), i);
+    }
 }
-
-}*/
 async function guessNumber() {
     await start();
-    //await loop()
+    await loop();
     const systemGen = (Math.floor(Math.random() * 10));
     const personGuess = await inquirer.prompt([
         { type: "number",
